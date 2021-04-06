@@ -1,0 +1,43 @@
+$violet: #5964E0;
+$light-violet: #939BF4;
+$white: #FFFFFF;
+$light-gray: #F4F6F8;
+$gray: #9DAEC2;
+$dark-gray: #6E8098;
+$very-dark-blue: #19202D;
+$midnight: #121721;
+
+$themes: (
+    light: (
+        primary-text-color: $very-dark-blue,
+        secondary-text-color: $dark-gray,
+        primary-background-color: $light-gray,
+        secondary-background-color: $white,
+        checkbox-color: rgba(#19202D, 0.1),
+    ),
+    dark: (
+        primary-text-color: $white,
+        secondary-text-color: $gray,
+        primary-background-color: $midnight,
+        secondary-background-color: $very-dark-blue,
+        checkbox-color: rgba(#FFFFFF, 0.1),
+    )
+);
+
+@mixin themify($themes) {
+    @each $theme, $map in $themes {
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}

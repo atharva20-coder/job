@@ -1,0 +1,55 @@
+.checkbox-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    user-select: none;
+
+    @include themify($themes) {
+        color: themed('primary-text-color');
+    }
+
+    input {
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        height: 24px;
+        width: 24px;
+        overflow: hidden;
+        border-radius: 3px;
+        margin-right: 16px;
+        margin-bottom: 4px;
+        background-color: rgba($very-dark-blue, 0.1);
+        .theme-dark & {
+            background-color: rgba($white, 0.1);
+        }
+    }
+
+    &:hover input ~ .checkmark {
+        background-color: rgba($violet, 0.25);
+    }
+      
+    input:checked ~ .checkmark {
+        background-color: $violet;
+        &:after {
+            display: block;
+        }
+    }
+
+    .checkmark:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-image: url('../assets/desktop/icon-check.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

@@ -1,0 +1,306 @@
+.loading-spinner {
+    margin: 40px 0px;
+}
+
+.main-wrapper {
+    flex-grow: 1;
+    padding: 0px 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include themify($themes) {
+        background-color: themed('primary-background-color');
+    }
+
+    @include breakpoint-up(medium) {
+        padding: 0px 40px;
+    }
+
+    .job {
+        max-width: 730px;
+        width: 100%;
+        
+        .company {
+            position: relative;
+            width: 100%;
+            height: 205px;
+            margin-top: -15px;
+            padding-bottom: 32px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include themify($themes) {
+                background-color: themed('secondary-background-color');
+            }
+
+            @include breakpoint-up(medium) {
+                flex-direction: row;
+                height: 140px;
+                padding: 0px;
+                padding-right: 40px;
+            }
+
+            &__logo {
+                margin-top: -25px;
+                margin-bottom: 24px;
+                width: 50px;
+                height: 50px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 100%;
+                }
+                @include themify($themes) {
+                    background-color: themed('primary-background-color');
+                }
+
+                @include breakpoint-up(medium) {
+                    margin: 0px;
+                    width: 140px;
+                    height: 140px;
+                    @include themify($themes) {
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            &__text-block {
+                text-align: center;
+                word-break: break-all;
+                @include breakpoint-up(medium) {
+                    margin-left: 40px;
+                }
+            }
+
+            &__name {
+                margin: 0px;
+                margin-bottom: 13px;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 20px;
+                text-align: center;
+
+                @include themify($themes) {
+                    color: themed('primary-text-color');
+                }
+
+                @include breakpoint-up(medium) {
+                    text-align: left;
+                }
+            }
+
+            &__site {
+                margin: 0px;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 16px;
+                text-decoration: none;
+                cursor: pointer;
+
+                @include themify($themes) {
+                    color: themed('secondary-text-color');
+                }
+
+                @include breakpoint-up(medium) {
+                    text-align: left;
+                }
+            }
+
+            &__button {
+                margin-top: auto;
+                height: 48px;
+                width: 147px;
+
+                @include breakpoint-up(medium) {
+                    margin-top: 0px;
+                    margin-left: auto;
+                }
+            }
+        }
+
+        .description {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            border-radius: 6px;
+            padding: 40px 24px 32px;
+            margin-top: 24px;
+            margin-bottom: 32px;
+
+            @include themify($themes) {
+                color: themed('secondary-text-color');
+                background-color: themed('secondary-background-color');
+            }   
+
+            @include breakpoint-up(medium) {
+                padding: 48px;
+            }
+            
+            &__header {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 32px;
+                @include breakpoint-up(medium) {
+                    margin-bottom: 40px;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+
+            &__information {
+                margin: 0px;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 16px;
+                color: $dark-gray;
+            }
+            
+            &__dot {
+                margin: 0px 6px;
+                border-radius: 100%;
+                background-color: $dark-gray;
+                height: 4px;
+                width: 4px;
+                display: inline-block;
+            }
+
+            &__title {
+                margin-top: 12px;
+                margin-bottom: 12px;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 20px;
+                @include themify($themes) {
+                    color: themed('primary-text-color');
+                }
+            }
+
+            &__location {
+                margin: 0px;
+                color: $violet;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            &__button {
+                margin-top: 32px;
+                width: 100%;
+                height: 48px;
+
+                @include breakpoint-up(medium) {
+                    width: 141px;
+                    margin-top: 0px;
+                }
+            }
+
+            p strong, h1, h2, h3, h4, h5, h6 {
+                @include themify($themes) {
+                    color: themed('primary-text-color');
+                }
+            }
+
+            a {
+                h1, h2, h3, h4, h5, h6, p, strong {
+                    @include themify($themes) {
+                        color: $violet;
+                    }
+                }
+            }
+
+            ul li::marker {
+                color: $violet;
+            }
+        }
+
+        .apply {
+            width: 100%;
+            background-image: url('../../assets/desktop/bg-pattern-detail-footer.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 6px;
+            padding: 32px;
+            color: $white;
+            word-break: break-all;
+
+            @include breakpoint-up(medium) {
+                padding: 42px 48px;
+            }
+
+            p, a, strong {
+                color: $white;
+            }
+
+            &__title {
+                margin: 0px;
+            }
+        }
+    }
+}
+
+.footer-wrapper {
+    margin-top: 40px;
+    width: 100%;
+    padding: 24px;
+    @include breakpoint-up(medium) {
+        padding: 24px 40px;
+    }
+
+    @include themify($themes) {
+        background-color: themed('secondary-background-color');
+    }
+
+    .footer {
+        width: 100%;
+        max-width: 730px;
+        margin: 0px auto;
+
+        &__text-block {
+            display: none;
+            max-width: 400px;
+
+        }
+
+        &__job-title {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 20px;
+            margin: 0px;
+            margin-bottom: 12px;
+            @include themify($themes) {
+                color: themed('primary-text-color');
+            }
+        }
+    
+        &__company-name {
+            margin: 0px;
+            color: $dark-gray;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        &__button {
+            height: 48px;
+            width: 100%;
+        }
+
+        @include breakpoint-up(medium) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__text-block {
+                display: block;
+            }
+
+            &__button {
+                width: 141px;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.text-field {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    @include themify($themes) {
+        color: themed('primary-text-color');
+    }
+}

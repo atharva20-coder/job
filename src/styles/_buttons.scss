@@ -1,0 +1,32 @@
+.button {
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 5px;
+}
+
+.button1 {
+    @extend .button;
+    color: $white;
+    background-color: $violet;
+    transition: background-color ease-in-out 200ms;
+    &:hover {
+        background-color: $light-violet;
+    }
+}
+
+.button2 {
+    @extend .button;
+    color: $violet;
+    $button2-background-color: rgba($violet, 0.1);
+    $button2-background-color-hover: rgba($violet, 0.35);
+
+    background-color: $button2-background-color;
+    transition: background-color ease-in-out 200ms;
+    &:hover {
+        background-color: $button2-background-color-hover;
+    }
+}

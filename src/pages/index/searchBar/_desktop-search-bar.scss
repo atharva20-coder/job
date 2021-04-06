@@ -1,0 +1,47 @@
+.desktop-search-bar {
+    width: 100%;
+    max-width: 1110px;
+    margin-top: -40px;
+    height: 80px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+
+    @include themify($themes) {
+        background-color: themed('secondary-background-color');
+    }
+
+    &__input-block {
+        width: 35%;
+        display: flex;
+        align-items: center;
+        padding: 28px 32px;
+        $border-color: rgba($dark-gray, 0.2);
+        border-right: 1px solid $border-color;
+
+        &--location {
+            // width: 27%;
+            width: 30%;
+        }
+    }
+
+    &__input {
+        @extend .text-field;
+        width: 100%;
+        margin-left: 16px;
+    }
+
+    &__filter-block {
+        display: flex;
+        // width: 33%;
+        width: 35%;
+        padding: 16px;
+        padding-left: 32px;
+    }
+
+    &__button {
+        margin-left: auto;
+        width: 123px;
+        height: 48px;
+    }
+}

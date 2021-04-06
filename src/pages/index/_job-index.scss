@@ -1,0 +1,66 @@
+.jobs-main {
+    flex-grow: 1;
+    padding: 0px 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include themify($themes) {
+        background-color: themed('primary-background-color');
+    }
+
+    @include breakpoint-up(medium) {
+        padding: 0px 40px;
+    }
+
+    .job-list {
+        width: 100%;
+        max-width: 1110px;
+        flex-grow: 1;
+        margin-top: 58px;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 50px;
+    
+        @include breakpoint-up(medium) {
+            margin-top: 70px;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+        }
+    
+        @include breakpoint-up(large) {
+            margin-top: 105px;
+            column-gap: 30px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .loading-icon {
+        margin-top: 32px;
+        margin-bottom: 62px;
+
+        @include breakpoint-up(medium) {
+            margin-top: 56px;
+        }
+
+        @include breakpoint-up(large) {
+            margin-bottom: 104px;
+        }
+    }
+
+    .load-more-button {
+        height: 48px;
+        width: 141px;
+        margin-top: 32px;
+        margin-bottom: 62px;
+
+        @include breakpoint-up(medium) {
+            margin-top: 56px;
+        }
+
+        @include breakpoint-up(large) {
+            margin-bottom: 104px;
+        }
+    }
+}

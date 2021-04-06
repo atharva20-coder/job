@@ -1,0 +1,32 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $light-gray;
+    &.theme-dark {
+        background-color: $midnight;
+    }
+}
+
+a {
+    text-decoration: underline;
+    color: $violet;
+}
